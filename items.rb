@@ -43,6 +43,7 @@ class Potion
 
     def pick_up()
         puts "Do you want to pick up #{self.name}"
+        sleep 1
     end
 end
 

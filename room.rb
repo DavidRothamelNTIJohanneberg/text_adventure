@@ -17,7 +17,7 @@ class Room
 
             while i < lines.length
                 puts lines[i]
-                sleep 0.5
+                sleep 2
                 i += 1
             end
         else
@@ -30,7 +30,7 @@ class Room
 
             while i < lines.length
                 puts lines[i]
-                sleep 0.5
+                sleep 2
                 i += 1
             end
             
