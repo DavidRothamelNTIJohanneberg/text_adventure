@@ -10,9 +10,9 @@ def main()
     puts "What's your name?"
     name = gets.chomp
     puts "Hello #{name}!"
-    player = Player.new(name, 10, 2, 1)
     want_to_play = "y"
     while want_to_play == "y"
+        player = Player.new(name, 10, 2, 1)
         game(player)
         puts "Do you want to play one more time? y/n"
         want_to_play = gets.chomp
@@ -87,7 +87,11 @@ def game(player_)
                 elsif input == "run"
                     break
                 end
-                monster.attack(player)
+                
+                if monster.hp > 0
+                    monster.attack(player)
+                end
+
                 if (player.hp < 1)
                     puts "You died"
                     return nil
@@ -127,6 +131,14 @@ def game(player_)
             puts "You see a #{item.name}"
             sleep 1
             item.pick_up(player)
+        end
+        if input != "run"
+            input = ""
+            puts "Type something to go to the next room"
+
+            while input == ""
+                input = gets
+            end
         end
     end
 end
